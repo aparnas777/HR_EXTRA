@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HR Hub | Employee Assistant</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- Boxicons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+    <div class="app-container">
+        <!-- Sidebar for FAQs -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2><i class='bx bxs-book-content'></i> Policy FAQs</h2>
+            </div>
+            <div class="faq-list" id="faq-list">
+                <!-- FAQs will be injected here via JS -->
+            </div>
+        </aside>
+
+        <!-- Main Chat Area -->
+        <main class="chat-container">
+            <header class="chat-header">
+                <div>
+                    <h1>HR Policy Assistant</h1>
+                    <span class="status"><i class='bx bxs-circle'></i> Online</span>
+                </div>
+            </header>
+
+            <div class="chat-history" id="chat-history">
+                <div class="message assistant">
+                    <div class="avatar"><i class='bx bx-bot'></i></div>
+                    <div class="content">Hello! I'm your HR Policy Assistant. How can I help you today?</div>
+                </div>
+            </div>
+
+            <div class="typing-indicator" id="typing-indicator" style="display: none;">
+                Assistant is typing<span>.</span><span>.</span><span>.</span>
+            </div>
+
+            <div class="chat-input-area">
+                <form id="chat-form">
+                    <input type="text" id="query-input" placeholder="Type your policy question..." autocomplete="off"
+                        required>
+                    <button type="submit"><i class='bx bxs-send'></i></button>
+                </form>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
