@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HR Hub | Admin Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Boxicons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+    <div class="dashboard-container">
+
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="brand">
+                <i class='bx bx-cube-alt'></i>
+                <span>HR Hub Admin</span>
+            </div>
+
+            <nav class="nav-links">
+                <a href="#upload-section" class="active"><i class='bx bx-upload'></i> Document Management</a>
+                <a href="#faq-section"><i class='bx bxs-inbox'></i> Frequent Queries & FAQs</a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="topbar">
+                <h2>Dashboard Control Panel</h2>
+            </header>
+
+            <div class="content-wrapper">
+
+                <!-- Document Upload Section -->
+                <section id="upload-section" class="card">
+                    <div class="card-header">
+                        <h3><i class='bx bxs-file-pdf'></i> Upload Policy Documents</h3>
+                        <p>Upload TXT or PDF files to ingest them into the Pinecone RAG database.</p>
+                    </div>
+
+                    <div class="upload-area" id="upload-area">
+                        <i class='bx bx-cloud-upload upload-icon'></i>
+                        <p>Drag and drop your files here, or click to browse</p>
+                        <input type="file" id="file-input" multiple accept=".txt,.pdf" style="display: none;">
+                    </div>
+
+                    <div id="file-list" class="file-list"></div>
+                    <button class="btn btn-primary" id="upload-btn">Ingest Documents</button>
+                    <div id="upload-status" class="status-msg"></div>
+                </section>
+
+                <!-- FAQ Management Section -->
+                <section id="faq-section" class="card" style="margin-top: 30px;">
+                    <div class="card-header">
+                        <h3><i class='bx bxs-message-rounded-dots'></i> Filtered Frequent Queries</h3>
+                        <p>Users have asked these queries multiple times. Promote them to FAQs.</p>
+                    </div>
+                    <div class="queries-list" id="frequent-queries">
+                        <!-- Loaded dynamically -->
+                    </div>
+
+                    <hr class="divider">
+
+                    <div class="card-header">
+                        <h3><i class='bx bxs-add-to-queue'></i> Manually Add FAQ</h3>
+                    </div>
+                    <form id="add-faq-form" class="add-faq-form">
+                        <div class="form-group">
+                            <label for="faq-question">Question</label>
+                            <input type="text" id="faq-question" placeholder="E.g., What is the 2026 vacation policy?"
+                                required>
+                        </div>
+                        <div class="form-group">
+                            <label for="faq-answer">Answer</label>
+                            <textarea id="faq-answer" rows="3" placeholder="Provide the official answer..."
+                                required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-secondary">Add FAQ</button>
+                    </form>
+                    <div id="faq-status" class="status-msg"></div>
+
+                    <div class="card-header" style="margin-top: 20px;">
+                        <h3><i class='bx bx-list-check'></i> Current FAQs</h3>
+                    </div>
+                    <div class="faq-list" id="current-faqs">
+                        <!-- Loaded dynamically -->
+                    </div>
+                </section>
+
+            </div>
+        </main>
+    </div>
+
+    <script src="admin_script.js"></script>
+</body>
+
+</html>
